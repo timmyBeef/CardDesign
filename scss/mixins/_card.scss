@@ -1,0 +1,15 @@
+@mixin card_image($img, $width, $height, $border-radius, $margin) {
+  background-image: $img;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: $width;
+  height: $height;
+  position: relative;
+  border-radius: $border-radius;
+  margin: $margin;
+}
+
+@mixin shadow($degree) {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, $degree);
+}

@@ -1,0 +1,282 @@
+@import './variables';
+@import './mixins/card';
+
+body {
+  font-family: $font-family;
+  background-color: $background-color;
+}
+
+/* card shadow */
+.shadow {
+  @include shadow(0.4);
+}
+
+.shadow:hover {
+  @include shadow(0.9);
+}
+
+/* card ITALY */
+.card {
+  @include card_image(url(../images/bg-4.png), 340px, 245px, 10px, $spacing-l);
+
+  &__content {
+    padding: $spacing-l;
+    position: absolute;
+    bottom: 1px;
+  }
+
+  &__tag {
+    width: 60px;
+    color: white;
+    font-size: 1rem;
+    padding: 2px;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  &__tag--red {
+    background-color: $red-color;
+  }
+
+  &__tag--top-left {
+    position: absolute;
+    top: 2rem;
+    left: $spacing-l;
+  }
+
+  &__heading {
+    color: white;
+    font-size: 1.6rem;
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+    line-height: $line-height;
+  }
+
+  &__description {
+    color: white;
+    font-size: 0.9rem;
+    line-height: $line-height;
+  }
+
+  &_dots {
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 1.4rem;
+    right: $spacing-s;
+  }
+}
+
+/* card2 SPAIN */
+.card2 {
+  display: flex;
+  flex-direction: row;
+
+  width: 720px;
+  height: 100%;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+  margin: $spacing-l;
+  padding-left: 0;
+
+  &__img {
+    width: 220px;
+    border-radius: 20px 0px 0px 20px;
+  }
+
+  &__content {
+    padding: 76px 32px 32px 32px;
+    background-color: white;
+    border-radius: 20px;
+  }
+
+  &__date {
+    color: #37e4ae;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  &__heading {
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+    line-height: $line-height;
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #9ca1ae;
+  }
+
+  &__link {
+    font-size: 1.2rem;
+    color: #056bfd;
+    text-decoration: none;
+  }
+
+  &__tag {
+    width: 60px;
+    color: white;
+    font-size: 1rem;
+    padding: 2px;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  &__tag--red {
+    background-color: $red-color;
+  }
+
+  &__tag--top-right {
+    position: absolute;
+    top: $spacing-l;
+    right: $spacing-l;
+  }
+}
+
+/* card3 card4 commons */
+%heart {
+  position: absolute;
+  top: 1.4rem;
+  right: $spacing-l;
+}
+
+/* card3 Burano Doors */
+.card3 {
+  @include card_image(
+    url(../images/bg-1.png),
+    370px,
+    425px,
+    10px 10px 0px 0px,
+    $spacing-l
+  );
+
+  &__bottom-red {
+    position: absolute;
+    background-color: #d62e28;
+    height: 425px;
+    width: 370px;
+    bottom: -7px;
+    left: 0;
+    border-radius: 11px;
+    z-index: -1;
+  }
+
+  &__heart {
+    @extend %heart;
+  }
+
+  &__content {
+    padding: $spacing-l;
+    position: absolute;
+    bottom: 1px;
+  }
+
+  &__heading {
+    color: white;
+    font-size: 1.6rem;
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+    line-height: $line-height;
+  }
+
+  &__heading--right-space {
+    margin-right: 20px;
+  }
+
+  &__tag {
+    color: white;
+    font-size: 1rem;
+    padding: 2px 15px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: $red-color;
+  }
+
+  &__description {
+    color: white;
+    font-size: 0.9rem;
+    line-height: $line-height;
+  }
+}
+
+/* card4 The Blue House */
+.card4 {
+  @include card_image(
+    url(../images/bg-6.png),
+    360px,
+    425px,
+    10px 10px 0px 0px,
+    $spacing-l
+  );
+
+  &__heart {
+    @extend %heart;
+  }
+
+  &__content {
+    padding: $spacing-l;
+    background-color: white;
+    width: 300px;
+    height: 150px;
+    border-radius: 10px;
+    @include shadow(0.4);
+
+    position: absolute;
+    bottom: -20px;
+    left: 30px; /* (360-300)/2 */
+  }
+
+  &__reviews {
+    margin-bottom: 1rem;
+  }
+
+  &__reviews__img {
+    width: 35%;
+    height: 35%;
+    padding-right: 3px;
+    padding-bottom: 3px;
+  }
+
+  &__reviews__text {
+    color: #b6b9c3;
+    font-size: 0.5rem;
+  }
+
+  &__heading {
+    color: $black-color;
+    font-size: 1.6rem;
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+    line-height: 0;
+  }
+
+  &__description {
+    color: #b2b6c0;
+    font-size: 0.9rem;
+    line-height: $line-height;
+    margin-bottom: 20px;
+  }
+
+  &__price {
+    color: $black-color;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: $line-height;
+  }
+
+  &__link {
+    color: white;
+    background-color: #1366fe;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
